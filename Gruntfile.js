@@ -25,6 +25,9 @@ module.exports = function (grunt) {
                 dest: './dist/js/edtf.js',
                 options: {
                     browserifyOptions: { standalone: 'edtf' },
+                    transform: [["babelify", {
+                        "presets": ["@babel/preset-env"], "plugins": [["@babel/transform-runtime", {"helpers": false}]]
+                    }]]
                 }
             }
         },
