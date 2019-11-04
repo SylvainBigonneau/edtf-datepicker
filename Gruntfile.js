@@ -26,7 +26,9 @@ module.exports = function (grunt) {
                 options: {
                     browserifyOptions: { standalone: 'edtf' },
                     transform: [["babelify", {
-                        "presets": ["@babel/preset-env"], "plugins": [["@babel/transform-runtime", {"helpers": false}]]
+                        "global": true,
+                        "presets": [["@babel/preset-env"]],
+                        "plugins": [["@babel/transform-runtime", {"helpers": false}]]
                     }]]
                 }
             }
@@ -67,6 +69,10 @@ module.exports = function (grunt) {
             main: {
                 src: '<%= concat.main.dest %>',
                 dest: 'dist/js/<%= pkg.name %>.min.js'
+            },
+            edtf: {
+                src: 'dist/js/edtf.js',
+                dest: 'dist/js/edtf.min.js'
             },
             locales: {
                 files: [{

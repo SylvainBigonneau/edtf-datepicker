@@ -763,7 +763,7 @@
 				fromArgs = false;
 			if (arguments.length) {
 				$.each(arguments, $.proxy(function (i, date) {
-					if (date instanceof Date) {
+					if (date instanceof edtf.Date) {
 						var precision = date.precision;
 						date = this._local_to_utc(date);
 						date.precision = precision;
@@ -1036,7 +1036,7 @@
 				before;
 			if (isNaN(year) || isNaN(month))
 				return;
-			if (d instanceof Date)
+			if (d instanceof edtf.Date)
 				specifiedMonth = !d.unspecified.is('month') && !d.unspecified.is('year');
 			this.picker.find('.datepicker-days .datepicker-switch')
 				.text(d.edtf);

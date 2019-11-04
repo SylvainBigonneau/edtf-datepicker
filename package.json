@@ -25,7 +25,7 @@
     "url": "https://github.com/dsi-ehess/edtf-datepicker.git"
   },
   "dependencies": {
-    "edtf": "^2.7.0",
+    "edtf": "https://github.com/SylvainBigonneau/browser-edtf.js.git",
     "jquery": "^3.4.1"
   },
   "devDependencies": {
